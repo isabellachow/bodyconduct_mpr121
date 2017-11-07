@@ -26,18 +26,18 @@ mpr121.setup(0x5a)
 pygame.mixer.pre_init(44100, -16, 12, 512)
 pygame.init()
 
-kick = pygame.mixer.Sound('samples/kick.wav')
-kick.set_volume(.65);
-snare = pygame.mixer.Sound('samples/snare.wav')
-snare.set_volume(.65);
-openhh = pygame.mixer.Sound('samples/open.wav')
-openhh.set_volume(.65);
-closedhh = pygame.mixer.Sound('samples/closed.wav')
-closedhh.set_volume(.65);
-clap = pygame.mixer.Sound('samples/clap.wav')
-clap.set_volume(.65);
-cymbal = pygame.mixer.Sound('samples/cymbal.wav')
-cymbal.set_volume(.65);
+soundone = pygame.mixer.Sound('samples/soundone.wav')
+soundone.set_volume(.65);
+soundtwo = pygame.mixer.Sound('samples/soundtwo.wav')
+soundtwo.set_volume(.65);
+soundone = pygame.mixer.Sound('samples/soundone.wav')
+soundone.set_volume(.65);
+soundtwo = pygame.mixer.Sound('samples/soundtwo.wav')
+soundtwo.set_volume(.65);
+soundone = pygame.mixer.Sound('samples/soundone.wav')
+soundone.set_volume(.65);
+soundtwo = pygame.mixer.Sound('samples/soundtwo.wav')
+soundtwo.set_volume(.65);
 
 # Track touches
 
@@ -59,17 +59,17 @@ while True:
 					print( 'Pin ' + str(i) + ' was just touched')
 
 					if (i == 0):
-						kick.play()
+						soundone.play()
 					elif (i == 1):
-						snare.play()
+						soundtwo.play()
 					elif (i == 2):
-						openhh.play()
+						soundone.play()
 					elif (i == 3):
-						closedhh.play()
+						soundtwo.play()
 					elif (i == 4):
-						clap.play()
+						soundone.play()
 					elif (i == 5):
-						cymbal.play()
+						soundtwo.play()
 
 				touches[i] = 1;
 			else:
