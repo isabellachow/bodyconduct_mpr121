@@ -53,8 +53,8 @@ pygame.init()
 # more .wav files are found in /usr/share/scratch/Media/Sounds/ that work fine this example uses Aniamal sounds.
 
 SOUND_MAPPING = {
-  0: 'samples/soundone.wav',
-  1: 'samples/soundtwo.wav',
+  0: '/home/pi/bodyconduct_mpr121/samples/soundone.wav',
+  1: '/home/pi/bodyconduct_mpr121/samples/soundtwo.wav',
   #2: '/opt/sonic-pi/etc/samples/ambi_soft_buzz.flac',
   #3: '/opt/sonic-pi/etc/samples/bass_dnb_f.flac',
   #4: '/opt/sonic-pi/etc/samples/bass_hit_c.flac',
