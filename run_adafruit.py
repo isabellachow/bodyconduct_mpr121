@@ -45,50 +45,62 @@ if not cap.begin():
 # Also you can specify an optional I2C bus with the bus keyword parameter.
 #cap.begin(busnum=1)
 
-pygame.mixer.pre_init(44100, -16, 12, 512)
+pygame.mixer.pre_init(48000, -16, 1, 1024)
 pygame.init()
 
 # Define mapping of capacitive touch pin presses to sound files
 # tons more sounds are available but because they have changed to .flac in /opt/sonic-pi/etc/samples/ some will not work
 # more .wav files are found in /usr/share/scratch/Media/Sounds/ that work fine this example uses Aniamal sounds.
 
-SOUND_MAPPING = {
-  0: '/home/pi/bodyconduct_mpr121/samples/soundone.wav',
-  1: '/home/pi/bodyconduct_mpr121/samples/soundtwo.wav',
-  #2: '/opt/sonic-pi/etc/samples/ambi_soft_buzz.flac',
-  #3: '/opt/sonic-pi/etc/samples/bass_dnb_f.flac',
-  #4: '/opt/sonic-pi/etc/samples/bass_hit_c.flac',
-  #5: '/opt/sonic-pi/etc/samples/elec_plip.flac',
-  #6: '/opt/sonic-pi/etc/samples/bass_trance_c.flac',
-  #7: '/opt/sonic-pi/etc/samples/vinyl_backspin.flac',
-  #8: '/opt/sonic-pi/etc/samples/elec_soft_kick.flac',
-  #9: '/opt/sonic-pi/etc/samples/elec_tick.flac',
-  #10: '/opt/sonic-pi/etc/samples/vinyl_rewind.flac',
-  #11: '/opt/sonic-pi/etc/samples/elec_twang.flac',
-}
-
-#UNCOMMENT FOR ANIMAL SOUNDS :)
-
-# SOUND_MAPPING = {
-#   0: '/usr/share/scratch/Media/Sounds/Animal/Bird.wav',
-#   1: '/usr/share/scratch/Media/Sounds/Animal/Cricket.wav',
-#   2: '/usr/share/scratch/Media/Sounds/Animal/Dog1.wav',
-#   3: '/usr/share/scratch/Media/Sounds/Animal/Dog2.wav',
-#   4: '/usr/share/scratch/Media/Sounds/Animal/Duck.wav',
-#   5: '/usr/share/scratch/Media/Sounds/Animal/Goose.wav',
-#   6: '/usr/share/scratch/Media/Sounds/Animal/Horse.wav',
-#   7: '/usr/share/scratch/Media/Sounds/Animal/Kitten.wav',
-#   8: '/usr/share/scratch/Media/Sounds/Animal/Meow.wav',
-#   9: '/usr/share/scratch/Media/Sounds/Animal/Owl.wav',
-#   10: '/usr/share/scratch/Media/Sounds/Animal/Rooster.wav',
-#   11: '/usr/share/scratch/Media/Sounds/Animal/WolfHowl.wav',
-# }
-
-sounds = [0,0,0,0,0,0,0,0,0,0,0,0]
-
-for key,soundfile in SOUND_MAPPING.iteritems():
-        sounds[key] =  pygame.mixer.Sound(soundfile)
-        sounds[key].set_volume(1);
+sound1 = pygame.mixer.Sound("/home/pi/bodyconduct_mpr121/samples/soundone.wav")
+soundChannel1 = pygame.mixer.Channel(1)
+soundList[0] = sound1
+soundChannelList[0] = soundChannel1
+sound2 = pygame.mixer.Sound("/home/pi//bodyconduct_mpr121/samples/soundtwo.wav")
+soundChannel2 = pygame.mixer.Channel(2)
+soundList[1] = sound2
+soundChannelList[1] = soundChannel2
+sound3 = pygame.mixer.Sound("/home/pi/bodyconduct_mpr121/samples/soundone.wav")
+soundChannel3 = pygame.mixer.Channel(3)
+soundList[2] = sound3
+soundChannelList[2] = soundChannel3
+sound4 = pygame.mixer.Sound("/home/pi//bodyconduct_mpr121/samples/soundtwo.wav")
+soundChannel4 = pygame.mixer.Channel(4)
+soundList[3] = sound4
+soundChannelList[3] = soundChannel4
+sound5 = pygame.mixer.Sound("/home/pi/bodyconduct_mpr121/samples/soundone.wav")
+soundChannel5 = pygame.mixer.Channel(5)
+soundList[4] = sound5
+soundChannelList[4] = soundChannel5
+sound6 = pygame.mixer.Sound("/home/pi//bodyconduct_mpr121/samples/soundtwo.wav")
+soundChannel6 = pygame.mixer.Channel(6)
+soundList[5] = sound6
+soundChannelList[5] = soundChannel6
+sound7 = pygame.mixer.Sound("/home/pi/bodyconduct_mpr121/samples/soundone.wav")
+soundChannel7 = pygame.mixer.Channel(7)
+soundList[6] = sound7
+soundChannelList[6] = soundChannel7
+sound8 = pygame.mixer.Sound("/home/pi//bodyconduct_mpr121/samples/soundtwo.wav")
+soundChannel8 = pygame.mixer.Channel(1)
+soundList[7] = sound8
+soundChannelList[7] = soundChannel8
+sound9 = pygame.mixer.Sound("/home/pi/bodyconduct_mpr121/samples/soundone.wav")
+soundChannel9 = pygame.mixer.Channel(2)
+soundList[8] = sound9
+soundChannelList[8] = soundChannel9
+sound10 = pygame.mixer.Sound("/home/pi//bodyconduct_mpr121/samples/soundtwo.wav")
+soundChannel10 = pygame.mixer.Channel(3)
+soundList[9] = sound10
+soundChannelList[9] = soundChannel10
+sound11 = pygame.mixer.Sound("/home/pi/bodyconduct_mpr121/samples/soundone.wav")
+soundChannel11 = pygame.mixer.Channel(4)
+soundList[10] = sound11
+soundChannelList[10] = soundChannel11
+sound12 = pygame.mixer.Sound("/home/pi//bodyconduct_mpr121/samples/soundtwo.wav")
+soundChannel12 = pygame.mixer.Channel(5)
+soundList[11] = sound12
+soundChannelList[11] = soundChannel12
+print "Soundboard Ready."
 
 # Main loop to print a message every time a pin is touched.
 print('Press Ctrl-C to quit.')
